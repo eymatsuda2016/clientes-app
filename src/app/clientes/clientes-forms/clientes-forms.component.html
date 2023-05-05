@@ -8,14 +8,15 @@
           <div class="col-md-6">
             <div class="form-goup">
               <label>ID:</label>
-              <input type="text" class="form-control" disabled="true"/>
+              <input type="text" [ngModel]="cliente.id" name= "id" class="form-control" disabled="true"/>
             </div>
           </div>
 
         <div class="col-md-6">
           <div class="form-goup">
             <label>Data Cadastro:</label>
-            <input type="text" class="form-control" disabled="true"/>
+            <input type="text" class="form-control" name="dataCadastro"
+                  [ngModel]="cliente.dataCadastro" disabled="true"/>
           </div>
         </div>
       </div>
@@ -24,21 +25,23 @@
           <div class="col-md-6">
             <div class="form-goup">
               <label>Nome: *</label>
-              <input type="text" class="form-control"/>
+              <input type="text" class="form-control"
+                    [(ngModel)]="cliente.nome" name="nome" />
             </div>
           </div>
 
           <div class="col-md-6">
             <div class="form-goup">
               <label>CPF: *</label>
-              <input type="text" class="form-control"/>
+              <input type="text" class="form-control"
+                    [(ngModel)]="cliente.cpf" name="cpf"  /><p>
             </div>
           </div>
         </div>
 
         <div class="row">
           <div class="col-md-2">
-            <button type="subimit" class="btn btn-success">
+            <button type="subimit" class="btn btn-success" (click)="clicar()">
               <i class="fa-fa-save"></i>Salvar
             </button>
           </div>
