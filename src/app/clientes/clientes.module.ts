@@ -6,10 +6,15 @@ import { ClientesFormsComponent } from './clientes-forms/clientes-forms.componen
 
 
 @NgModule({
-  declarations: [ClientesFormsComponent],
+  declarations: [
+    ClientesFormsComponent
+  ],
   imports: [
     CommonModule,
     ClientesRoutingModule
+  ],
+  exports:[
+    ClientesFormsComponent
   ]
 })
 export class ClientesModule { }

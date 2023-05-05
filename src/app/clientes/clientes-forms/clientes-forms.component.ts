@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Cliente } from '../cliente';
 
 @Component({
   selector: 'app-clientes-forms',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./clientes-forms.component.css']
 })
 export class ClientesFormsComponent implements OnInit {
+
+  cliente: Cliente;
 
   constructor() { }
 
