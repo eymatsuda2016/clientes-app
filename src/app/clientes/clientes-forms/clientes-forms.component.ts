@@ -1,24 +1,37 @@
 import { Component, OnInit } from '@angular/core';
 import { Cliente } from '../cliente';
+import { ClientesService } from '../../clientes.service';
+
 
 @Component({
   selector: 'app-clientes-forms',
   templateUrl: './clientes-forms.component.html',
-  styleUrls: ['./clientes-forms.component.css']
+  styleUrls: ['./clientes-forms.component.css'],
 })
 export class ClientesFormsComponent implements OnInit {
-
   cliente: Cliente;
+  success : boolean = false;
+  errors : String[];
 
-
-  constructor() {
-    this.cliente = new Cliente();
+  constructor(private service: ClientesService) {
+      this.cliente = new Cliente();
   }
 
   ngOnInit(): void {
-  }
-  onSubmit(){
-    console.log(this.cliente);
+
   }
 
+  onSubmit() {
+    this.service
+    .salvar(this.cliente)
+    .subscribe(response => {
+      this.success = true;
+      this.errors = null;
+      this.cliente = response;
+    }, errorResponse => {
+      this.success = false;
+      this.errors = errorResponse.error.errors;
+    }
+    )
+  }
 }
