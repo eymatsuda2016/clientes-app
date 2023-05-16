@@ -5,6 +5,8 @@
   </li>
 </ol>
 <div class="container">
+  <div class="row">
+    <div class="col-md-12">
   <form #clienteForm="ngForm" (ngSubmit)="onSubmit()">
     <div class="row">
       <div class="col-md-12">
@@ -17,7 +19,6 @@
           *ngFor="let error of errors">
           {{ error }}
         </div>
-
       </div>
     </div>
     <div class="row" *ngIf="cliente.id">
